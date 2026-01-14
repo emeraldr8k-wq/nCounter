@@ -22,9 +22,7 @@ public class App {
                     public void run() {
                         while (true) {
                             synchronized (lock) {
-                                if (currentThread >= totalThread){
-                                    break;
-                                }
+
                                 if (currentThread != myNumber) {
                                     try {
                                         lock.wait();
@@ -35,7 +33,7 @@ public class App {
                                 } else {
                                     System.out.println("Поток " + myNumber);
 //                                    n -= currentThread >= n ?(currentThread / n): 0;
-                                    currentThread = (currentThread + 1) ;
+                                    currentThread = (currentThread + 1) % totalThread;
 
                                 }
 
