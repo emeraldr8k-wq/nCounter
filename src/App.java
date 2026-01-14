@@ -30,7 +30,7 @@ public class App {
                                         throw new RuntimeException(e);
                                     }
 
-                                } else {
+                                }  else {
                                     System.out.println("Поток " + myNumber);
 //                                    n -= currentThread >= n ?(currentThread / n): 0;
                                     currentThread = (currentThread + 1) % totalThread;
